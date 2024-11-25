@@ -1,14 +1,12 @@
 import gymnasium as gym
 
 env=gym.make('CartPole-v1',render_mode='human')
-(state,_)=env.reset()
-
-initial_state = env.reset()
+env.reset()
 env.render()
 action = env.action_space.sample()
 pole_e = [0]
 cart_e = [0]
-for i in range(1, 1000):
+for i in range(1, 10000):
     observation, reward, terminated, truncated, info = env.step(action)
     cp, cv, pa, pv = observation
     pole_e.append(0 - pa)

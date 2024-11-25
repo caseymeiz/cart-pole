@@ -2,10 +2,8 @@ import gymnasium as gym
 import time
 
 env=gym.make('CartPole-v1',render_mode='human')
-(state,_)=env.reset()
 
-
-initial_state = env.reset()
+env.reset()
 env.render()
 action = env.action_space.sample()
 for i in range(1000):
